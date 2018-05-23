@@ -217,7 +217,7 @@ You have lost the game.''')
         print('''HP = ''', str(user.HP))
         print("   You are at", str(user.pos), "; ")
         print(user.pos.desc)
-        x=input("Input 1-4; ")
+        x=input("Input 1-5; ")
         if x == "1":
             if self.energy > 0:
                 self.energy = self.energy - 5
@@ -241,7 +241,7 @@ You have lost the game.''')
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
             print("Invalid inputs, try again")
-            menu()
+            user.player_menu()
     def move(self):
         self.pos.getlinks()
         
@@ -402,11 +402,8 @@ def airport():
 def menu():
     print('''------------------
 | 1. New Game    |
-| 2. Load Game   |
-| 3. Admin Mode  |
-| 4. Misc Debug  |
 ------------------''')
-    x=input("Input 1-4; ")
+    x=input("Input ; ")
     if x == "1":
         new_game()
     elif x == "2":
